@@ -1,0 +1,11 @@
+#field {
+	border: 2px solid black;
+}
+
+.user:hover {
+	background: green;
+}
+
+.user.selected {
+	background: red;
+}
