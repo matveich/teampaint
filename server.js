@@ -5,7 +5,7 @@ var io = require('socket.io')(server);
 
 app.use(express.static('static'));
 
-server.listen(8888);
+server.listen(8080);
 
 console.log('Server started...');
 
