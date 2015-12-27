@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var server = require('http').Server(app);
-var io = require('socket.io')(server);
+//var io = require('socket.io')(server);
 
 app.use(express.static('static'));
 
@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
 	res.sendfile('static/index.html');
 });
 
-var connected_users = [];
+/*var connected_users = [];
 
 var paints = [];
 
@@ -66,4 +66,4 @@ io.on('connection', function (socket) {
 			connected_users.splice(find(socket.id, 'socket'), 1);
 		}
 	});
-});
+});*/
