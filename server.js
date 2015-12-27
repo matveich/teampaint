@@ -1,11 +1,15 @@
 var express = require('express');
 var app = express();
+
+app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3002);
+app.set('ip', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
+
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
 app.use(express.static('static'));
 
-server.listen(8080);
+server.listen(app.get('port') ,app.get('ip'));
 
 console.log('Server started...');
 
