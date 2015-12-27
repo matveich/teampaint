@@ -1,4 +1,4 @@
-var socket = io('http://127.0.0.1:8080');
+var socket = io('http://127.0.0.1:8888');
 
 function user_isValid(username) {
     return username.match(/^[a-z0-9A-Z_-]{4,20}$/);
