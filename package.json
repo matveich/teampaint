@@ -2,7 +2,9 @@
   "scripts": {
     "start": "node server.js",
   },
-  "main": "server.js",
+  "main": { 
+    "server.js"
+  },
   "devDependencies": {
     "socket.io": ">=1.3.7"
   },
