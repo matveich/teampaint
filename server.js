@@ -1,15 +1,19 @@
 var express = require('express');
 var app = express();
+
+app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3002);
+app.set('ip', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
+
 var server = require('http').Server(app);
-//var io = require('socket.io')(server);
+var io = require('socket.io')(server);
 
-//app.use(express.static('static'));
+app.use(express.static('static'));
 
-server.listen(8080, '0.0.0.0');
+server.listen(app.get('port') ,app.get('ip'));
 
 console.log('Server started...');
 
-/*app.get('/', function (req, res) {
+app.get('/', function (req, res) {
 	res.sendfile('static/index.html');
 });
 
@@ -66,4 +70,4 @@ io.on('connection', function (socket) {
 			connected_users.splice(find(socket.id, 'socket'), 1);
 		}
 	});
-});*/
+});
