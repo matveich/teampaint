@@ -5,7 +5,7 @@ var server = require('http').Server(app);
 
 //app.use(express.static('static'));
 
-server.listen(8888, '0.0.0.0');
+server.listen(8080, '0.0.0.0');
 
 console.log('Server started...');
 
