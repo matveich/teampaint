@@ -3,17 +3,17 @@ var app = express();
 var server = require('http').Server(app);
 //var io = require('socket.io')(server);
 
-app.use(express.static('static'));
+//app.use(express.static('static'));
 
 server.listen(8080);
 
 console.log('Server started...');
 
-app.get('/', function (req, res) {
+/*app.get('/', function (req, res) {
 	res.sendfile('static/index.html');
 });
 
-/*var connected_users = [];
+var connected_users = [];
 
 var paints = [];
 
